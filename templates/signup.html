@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/website.css">
+  <link rel="stylesheet" href="/static/css/signup.css">
+  <title>Sign-UP</title>
+</head>
+<body>
+  {% include 'navbar.html' %}
+
+
+  <form action="{% url "signup" %}" method="POST" style="border:1px solid #ccc">
+    {% csrf_token %}
+    <div class="container">
+      <h1>Sign Up</h1>
+      {% if error %}
+      <p>{{ error }}</p>
+      {% else %}
+      <p>Please fill in this form to create an account.</p>
+      {% endif %}
+      <hr>
+  
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" pattern="[A-Za-z0-9]*" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" oninput="validatePassword()" pattern=".{4,}" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" id="psw-repeat" oninput="validatePassword()" name="psw-repeat" required>
+
+      <p class="psw-check">Password must be atleast 4 characters long.</p>
+
+      <div class="clearfix">
+        <button type="button" class="cancelbtn"><a href="/login">Cancel</a></button>
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+  <script type="text/javascript">
+    let ptag = document.getElementById('error');
+    setTimeout(() => {
+      ptag.innerHTML = 'Please fill in this form to create an account.';
+    }, 10000);
+    // Check password and confirm password
+    var password = document.getElementById("psw")
+    , confirm_password = document.getElementById("psw-repeat")
+    , submitBtn = document.getElementsByClassName("signupbtn")
+    , check = document.getElementsByClassName("psw-check");
+
+    setTimeout(() => {
+      submitBtn[0].disabled = true;
+      submitBtn[0].style.cursor = "not-allowed";
+      submitBtn[0].style.opacity = "0.5";
+    }, 500);
+
+    function validatePassword(){
+      if (password.value.length >= 4) {
+        if (confirm_password.value == "") {
+          check[0].innerHTML = "Please confirm your password.";
+          submitBtn[0].disabled = true;
+          submitBtn[0].style.cursor = "not-allowed";
+          submitBtn[0].style.opacity = "0.5";
+        } else if (password.value != confirm_password.value) {
+          check[0].innerHTML = "Passwords do not match.";
+          submitBtn[0].disabled = true;
+          submitBtn[0].style.cursor = "not-allowed";
+          submitBtn[0].style.opacity = "0.5";
+        } else {
+          check[0].innerHTML = "Passwords match.";
+          submitBtn[0].style.cursor = "pointer";
+          submitBtn[0].disabled = false;
+          submitBtn[0].style.opacity = "1";
+        }
+      } else {
+        check[0].innerHTML = "Password must be atleast 4 characters long.";
+        submitBtn[0].style.cursor = "pointer";
+        submitBtn[0].disabled = false;
+        submitBtn[0].style.opacity = "1";
+      }
+    }
+  </script>
+</body>
+</html>

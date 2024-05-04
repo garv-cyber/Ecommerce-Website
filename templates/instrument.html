@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnlyBase - Let the Music Flow in Blood</title>
+  <link rel="stylesheet" href="/static/css/website.css">
+  <link rel="stylesheet" href="/static/css/instrument.css">
+  <link rel="icon" href="/static/img/logo.ico">
+</head>
+<body>
+  {% include 'navbar.html' %}
+  <center>
+    {% if error %}
+    <h2 class="error">{{ error }}</h2>
+    {% endif %}
+  </center>
+  <section id="instrument">
+    <div class="instrument-container">
+      <div class="instrument">  
+        <p style="font-size: 30px;">KEYBOARD</p>
+        <a href="/products?item=keyboard"><img src="/static/img/keyboard image.jpg" alt="Keyboard Image" width="350"></a>
+      </div>
+      <div class="instrument">
+        <p style="font-size: 30px;">GUITAR</p>
+        <a href="/products?item=guitar"><img src="/static/img/guitar.jfif" alt="Guitar image" width="350px"></a>
+      </div>
+    </div>
+    <div class="instrument-container">
+      <div class="instrument">
+        <p style="font-size: 30px;">VIOLIN</p>
+        <a href="/products?item=violin"><img src="/static/img/violin.jpeg" alt="Violin image" width="350px"></a>
+      </div>
+      <div class="instrument">
+        <p style="font-size: 30px;">DRUM</p>
+        <a href="/products?item=drum"><img src="/static/img/drum.jfif" alt="Drum image" width="350px"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tutorial">
+    <!-- Add your tutorial content here -->
+    <ul type="square">
+    
+      <li>
+        Learn to play your heart from here.
+      </li>
+    
+      <li>
+        Life time access to 20+ recorded videos
+      </li>
+    
+      <li>
+        Learn to play grooves and rythmes on your favourite instrument
+      </li>
+    
+      <li>
+        Do contact us if you need any other further assistance.
+      </li>
+    
+    </ul>
+  </section>
+
+  {% include 'footer.html' %}
+</body>

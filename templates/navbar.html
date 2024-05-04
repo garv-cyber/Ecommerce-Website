@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/website.css">
+    <title>Document</title>
+  <link rel="icon" href="/static/img/logo.ico">
+</head>
+<body>
+    {% block navbar %}
+    <div class="topnav">
+        <div class="topnav-left">
+            <img class="nav" src="/static/img/logo1.jpeg" alt="Logo Box">
+            <a href="/">Home</a>
+            <a href="/about">About us</a>
+            <a href="/instruments">Instrument</a>
+            <a href="/career">Career</a>
+            <a href="/features">Features</a>
+        </div>
+        <div class="topnav-right">
+            {% if username == "admin" %}
+            <a href="/remove">Remove Instrument</a>
+            <a href="/add_select">Add Instrument</a>
+            <a href="/logout">Logout</a>
+            {% elif username %}
+            <a href="/logout">Logout</a>
+            {% else %}
+            <a href="/login">Login</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

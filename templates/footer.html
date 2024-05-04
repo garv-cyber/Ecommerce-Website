@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/website.css">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block footer %}
+    <footer class="down">
+        <div class="row">
+            <div id="links 1">
+                <ul>
+                    <li>
+                        <h3 style="color: white;">Quick Links</h3>
+                        <hr>
+                    </li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/feedback">Feedback</a></li>
+                    <li><a href="/contact">Contact us</a></li>
+                    {% if username %}
+                    <li><a href="/logout">Logout</a></li>
+                    {% else %}
+                    <li><a href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div id="links 3">
+                <p style="text-align:right;color: white;">
+                    &copy; OnlyBase.in All Rights Reserved
+                </p>
+            </div>
+
+            <div id="links 2">
+                <h3 style="color: white;">Reach out to us</h3>
+                <p style="color: white; text-align: center;">
+                    N-10A Kalkaji, Ground Floor, New Delhi, 110019 <br> <br>
+                    contact us: +91-6377618075 / <br>
+                    contact@clapbox.in
+                </p>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+</body>
+
+</html>

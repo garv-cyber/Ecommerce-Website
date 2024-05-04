@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="/static/css/buy.css" />
+</head>
+
+<body>
+    <div class="center-container">
+        <div class="order-box">
+            {% if msg %}
+            <h2 class="msg">{{ msg }}</h2>
+            <div class="buttons">
+                <div class="button">
+                    <a href="/">Back To Home</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="product-info">
+                <img src="/{{ product.image }}" alt="{{ product.name }}" />
+                <h2>{{ product.name }}</h2>
+                <h3>Price: {{ product.price }}</h3>
+            </div>
+
+            <form action="{% url "buy" %}" method="POST" id="order-form">
+                {% csrf_token %}
+                <div class="user-info">
+                    <h2>Enter your information</h2>
+                    <input type="text" name="address" placeholder="Address" class="input-field" required />
+                    <input type="text" pattern="[0-9]{10,10}" name="phone" placeholder="Enter your number without the country code" class="input-field" required />
+                    <input name="id" type="hidden" value="{{ product.id }}" />
+                    <input name="item" type="hidden" value="{{ item }}" />
+                </div>
+                <input id="submitbutton" type="submit" value="Buy Now" class="submit-button" />
+                <button id="cancelbutton" type="button" onclick="window.location.href='/instruments'">Cancel</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

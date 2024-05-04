@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnlyBase - Let the Music Flow in Blood</title>
+  <link rel="stylesheet" href="/static/css/website.css">
+  <link rel="stylesheet" href="/static/css/instrument.css">
+  <link rel="icon" href="/static/img/logo.ico">
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+  <center>
+    <h2>Add Product Details</h2>
+    {% if error %}
+    <h2 class="error">{{ error }}</h2>
+    {% endif %}
+  </center>
+  <section id="instrument">
+    <div class="instrument-container">
+      <div class="instrument">  
+        <p style="font-size: 30px;">KEYBOARD</p>
+        <a href="/add?form_type=keyboard"><img src="/static/img/keyboard image.jpg" alt="Keyboard Image" width="350"></a>
+      </div>
+      <div class="instrument">
+        <p style="font-size: 30px;">GUITAR</p>
+        <a href="/add?form_type=guitar"><img src="/static/img/guitar.jfif" alt="Guitar image" width="350px"></a>
+      </div>
+    </div>
+    <div class="instrument-container">
+      <div class="instrument">
+        <p style="font-size: 30px;">VIOLIN</p>
+        <a href="/add?form_type=violin"><img src="/static/img/violin.jpeg" alt="Violin image" width="350px"></a>
+      </div>
+      <div class="instrument">
+        <p style="font-size: 30px;">DRUM</p>
+        <a href="/add?form_type=drum"><img src="/static/img/drum.jfif" alt="Drum image" width="350px"></a>
+      </div>
+    </div>
+  </section>
+
+  {% include 'footer.html' %}
+</body>

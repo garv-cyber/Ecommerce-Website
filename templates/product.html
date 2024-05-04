@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Keyboard - Life is like a piano what you get out of it depends on how you
+      plat it
+    </title>
+    <link rel="icon" href="/static/img/logo.ico">
+    <link rel="stylesheet" href="/static/css/sell.css" />
+    <!-- Font Awesome Icon Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    {% include 'navbar.html' %}
+    <div class="card-container">
+      {% for i in data %}
+      <div class="product-card">
+        <div class="slideshow-container">
+          <div class="fade product-image">
+            <img src="/{{ i.image }}" style="width: 100%" />
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">{{ i.name }}</h3>
+          <p class="product-description">{{ i.description }}</p>
+          <p class="product-price">${{ i.price }}</p>
+          <a href="/buy?item={{ item }}&id={{i.id}}">
+            <div class="buy-now-button">
+              Buy Now
+            </div>
+          </a>
+        </div>
+      </div>
+      {% endfor %} {% include 'footer.html' %}
+    </div>
+  </body>
+</html>
