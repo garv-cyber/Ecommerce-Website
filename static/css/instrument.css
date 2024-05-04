@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif, Verdana;
+    background-image: url('/static/img/aboutusbanner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Styles for the main instrument section */
+#instrument {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Styles for individual instruments */
+.instrument {
+    text-align: center;
+}
+
+.instrument p {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.instrument img {
+    max-width: 350px;
+}
+
+/* Styles for the tutorial section */
+.tutorial {
+    max-width: 300px;
+}
+
+.tutorial ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.tutorial li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+/* Additional styles for .instrument and .tutorial sections */
+.instrument,
+.tutorial {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    /* Centering horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Add relative positioning */
+    max-width: 800px;
+    /* Limit the width */
+}
+
+/* Box for background image of tutorial */
+.tutorial:before {
+    content: "";
+    background-image: url("https://s.yimg.com/os/creatr-uploaded-images/2020-10/c6ad0bb0-04c5-11eb-b67f-fd84c7470024");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+    /* Semi-transparent */
+    z-index: -1;
+    border-radius: 10px;
+}
+
+/* Center the content inside tutorial */
+.tutorial>* {
+    position: relative;
+    z-index: 1;
+}
+
+.error {
+    margin: auto;
+}

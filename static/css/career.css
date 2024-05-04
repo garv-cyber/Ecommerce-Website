@@ -1,0 +1,107 @@
+/* Align 4 iframes in mainvdo class in a grid */
+.mainvdo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+/* Fix the size of iframes */
+.mainvdo iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 2px;
+}
+
+h1{
+  text-align: center;
+  font-size: 2.5em;
+  margin: 10px;;
+  padding:10px;
+  color: #ffffff;
+  background-color: #333;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 5px #ccc;
+}
+
+h2{
+  margin: 10px;
+  text-align: center;
+  font-size: 2em;
+  padding:10px;
+  color: #ffffff;
+  background-color: gray;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 5px #ccc;
+}
+
+/* all content  */
+
+.container-1 {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr); */
+  grid-gap: 10px;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+
+/* img size should be fixed  */
+
+.img1 {
+width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 2px;
+  margin-right: 20px;
+  float: left;
+}
+
+.img2 {
+width: 300px;
+  height: 300px;
+  border: none;
+  border-radius: 2px;
+  margin-left: 20px;
+  float: right;
+
+}
+
+.individual {
+display: flex;
+}
+
+p{
+  font-size: 1.3em;
+  margin: 10px;
+  padding:10px;
+  color: #000000;
+  /* background-color: gray; */
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 5px #ccc;
+}
